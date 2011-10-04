@@ -1,0 +1,18 @@
+* Sun Jun 26 2011 Anas Nashif <anas.nashif@intel.com> - 22.13
+- Disable translations, repackage docs
+
+* Mon May 30 2011 Carsten Munk <carsten@maemo.org> - 22.13
+- Add %{arm} to ifarch's, fix package build for ARM.
+
+* Thu May 12 2011 Anas Nashif <anas.nashif@intel.com> - 22.13
+- Link pidof to the right place.
+
+* Thu May 12 2011 Anas Nashif <anas.nashif@intel.com> - 22.13
+- Link pidof to killall, since it sysvinit is gone
+- Update to 22.13
+
+* Mon Feb 01 2010 Yi Yang <yi.y.yang@intel.com> - 22.10
+- update to 22.10
+
+* Sun Nov 02 2008 Anas Nashif <anas.nashif@intel.com> 22.6
+- patch -> patch0
