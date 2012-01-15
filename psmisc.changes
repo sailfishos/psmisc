@@ -1,3 +1,6 @@
+* Sun Jan 15 2012 Carsten Munk <carsten.munk@gmail.com> - 22.13
+- Remove ifarch for peekfd, this really seems to be everywhere, also for MIPS
+
 * Sun Jun 26 2011 Anas Nashif <anas.nashif@intel.com> - 22.13
 - Disable translations, repackage docs
 

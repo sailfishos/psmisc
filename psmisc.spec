@@ -57,7 +57,5 @@ popd
 %{_bindir}/pstree
 %{_bindir}/pstree.x11
 %{_bindir}/prtstat
-%ifarch %ix86 x86_64 ppc ppc64 %{arm}
 %{_bindir}/peekfd
-%endif
 
