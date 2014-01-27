@@ -4,7 +4,7 @@
 
 Name:           psmisc
 Version:        22.13
-Release:        5
+Release:        6
 License:        BSD/GPLv2+
 Summary:        Utilities for managing processes on your system
 Url:            http://psmisc.sourceforge.net
@@ -57,5 +57,6 @@ popd
 %{_bindir}/pstree
 %{_bindir}/pstree.x11
 %{_bindir}/prtstat
+%ifnarch aarch64
 %{_bindir}/peekfd
-
+%endif

@@ -1,3 +1,6 @@
+* Mon Jan 27 2014 Oleg Girko <oleg.girko@jolla.com> - 22.13-6
+- Add aarch64 support. Fixes JB#39688
+
 * Sun Jan 15 2012 Carsten Munk <carsten.munk@gmail.com> - 22.13
 - Remove ifarch for peekfd, this really seems to be everywhere, also for MIPS
 
