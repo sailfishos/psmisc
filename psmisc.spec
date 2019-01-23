@@ -1,11 +1,7 @@
-#
-# Please submit bugfixes or comments via http://bugs.meego.com/
-#
-
 Name:           psmisc
 Version:        22.13
-Release:        6
-License:        BSD/GPLv2+
+Release:        7
+License:        GPLv2+
 Summary:        Utilities for managing processes on your system
 Url:            http://psmisc.sourceforge.net
 Group:          Applications/System
@@ -28,6 +24,15 @@ command sends a specified signal (SIGTERM if nothing is specified) to
 processes identified by name.  The fuser command identifies the PIDs
 of processes that are using specified files or filesystems.
 
+%package doc
+Summary:   Documentation for %{name}
+Group:     Documentation
+Requires:  %{name} = %{version}-%{release}
+Obsoletes: %{name}-docs
+
+%description doc
+Man pages for %{name}.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -47,10 +52,13 @@ pushd %{buildroot}/sbin;
 ln -s ../usr/bin/killall pidof
 popd
 
-%docs_package
+mkdir -p %{buildroot}%{_docdir}/%{name}-%{version}
+install -m0644 -t %{buildroot}%{_docdir}/%{name}-%{version} \
+        AUTHORS ChangeLog NEWS README
 
 %files 
 %defattr(-,root,root)
+%license COPYING
 /sbin/fuser
 %{_bindir}/killall
 /sbin/pidof
@@ -60,3 +68,8 @@ popd
 %ifnarch aarch64
 %{_bindir}/peekfd
 %endif
+
+%files doc
+%defattr(-,root,root)
+%{_mandir}/man1/*.*
+%{_docdir}/%{name}-%{version}
