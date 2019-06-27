@@ -45,23 +45,23 @@ make %{?_smp_mflags}
 %install
 %make_install
 
-mkdir -p %{buildroot}/sbin
-mv %{buildroot}%{_bindir}/fuser %{buildroot}/sbin
+mkdir -p %{buildroot}%{_sbindir}
+mv %{buildroot}%{_bindir}/fuser %{buildroot}%{_sbindir}
 
-pushd %{buildroot}/sbin;
-ln -s ../usr/bin/killall pidof
+pushd %{buildroot}%{_sbindir};
+ln -s /usr/bin/killall pidof
 popd
 
 mkdir -p %{buildroot}%{_docdir}/%{name}-%{version}
 install -m0644 -t %{buildroot}%{_docdir}/%{name}-%{version} \
         AUTHORS ChangeLog NEWS README
 
-%files 
+%files
 %defattr(-,root,root)
 %license COPYING
-/sbin/fuser
+%{_sbindir}/fuser
 %{_bindir}/killall
-/sbin/pidof
+%{_sbindir}/pidof
 %{_bindir}/pstree
 %{_bindir}/pstree.x11
 %{_bindir}/prtstat
