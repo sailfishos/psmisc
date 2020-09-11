@@ -1,3 +1,6 @@
+* Fri Sep 11 2020 Marko Lemmetty <marko.lemmetty@jolla.com> - 22.13+git1
+- Change name and version since busybox replaces psmisc. Contributes to JB#48949
+
 * Wed Jan 09 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 22.13-7
 - [packaging] Rename psmisc-docs to psmisc-doc. Contributes to JB#38578
 
