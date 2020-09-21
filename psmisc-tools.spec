@@ -1,12 +1,10 @@
-Name:           psmisc
-Version:        22.13
-Release:        7
+Name:           psmisc-tools
+Version:        22.13+git1
+Release:        1
 License:        GPLv2+
 Summary:        Utilities for managing processes on your system
 Url:            http://psmisc.sourceforge.net
-Group:          Applications/System
-Source:         http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-
+Source0:        psmisc-22.13.tar.gz
 # rhbz #651794 - incorrect exit code of fuser -m -s
 Patch0:         psmisc-22.13-fuser-silent.patch
 # rhbz #666213 - uninitialized memory leading to `killall -g name` failure
@@ -15,6 +13,9 @@ Patch1:         psmisc-22.13-killall-pgid.patch
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  pkgconfig(ncurses)
+
+Provides:       psmisc = 22.13+git1
+Obsoletes:      psmisc < 22.13+git1
 
 %description
 The psmisc package contains utilities for managing processes on your
@@ -26,7 +27,6 @@ of processes that are using specified files or filesystems.
 
 %package doc
 Summary:   Documentation for %{name}
-Group:     Documentation
 Requires:  %{name} = %{version}-%{release}
 Obsoletes: %{name}-docs
 
@@ -34,9 +34,7 @@ Obsoletes: %{name}-docs
 Man pages for %{name}.
 
 %prep
-%setup -q
-%patch0 -p1
-%patch1 -p1
+%autosetup -p1 -n psmisc-22.13
 
 %build
 %configure --prefix=/usr --disable-nls
